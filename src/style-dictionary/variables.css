@@ -1,0 +1,177 @@
+
+@import url("@fontsource-variable/rubik");
+
+/**
+ * Do not edit directly
+ * Generated on Wed, 01 Jan 2025 16:57:26 GMT
+ */
+
+:root {
+  --mfe-color-primary-base: #f27a1a;
+  --mfe-color-primary-highlight: #ef6114;
+  --mfe-color-primary-contrast: #fef2e8;
+  --mfe-color-success-base: #0bc15c;
+  --mfe-color-success-highlight: #09a44e;
+  --mfe-color-success-contrast: #e7f9ef;
+  --mfe-color-danger-base: #ff5043;
+  --mfe-color-danger-highlight: #ff3028;
+  --mfe-color-danger-contrast: #ffeeec;
+  --mfe-color-warning-base: #ffb600;
+  --mfe-color-warning-highlight: #ff9800;
+  --mfe-color-warning-contrast: #fff8e6;
+  --mfe-color-info-base: #5794ff;
+  --mfe-color-info-highlight: #457eff;
+  --mfe-color-info-contrast: #eef4ff;
+  --mfe-color-neutral-none: #000;
+  --mfe-color-neutral-darkest: #0f131a;
+  --mfe-color-neutral-darker: #273142;
+  --mfe-color-neutral-dark: #6e7787;
+  --mfe-color-neutral-light: #95a1b5;
+  --mfe-color-neutral-lighter: #afbbca;
+  --mfe-color-neutral-lightest: #f1f2f7;
+  --mfe-color-neutral-full: #fff;
+  --mfe-size-4xs: 0.125rem;
+  --mfe-size-3xs: 0.25rem;
+  --mfe-size-2xs: 0.5rem;
+  --mfe-size-xs: 0.75rem;
+  --mfe-size-s: 0.875rem;
+  --mfe-size-m: 1rem;
+  --mfe-size-l: 1.25rem;
+  --mfe-size-xl: 1.5rem;
+  --mfe-size-2xl: 2rem;
+  --mfe-size-3xl: 2.5rem;
+  --mfe-size-4xl: 3rem;
+  --mfe-size-5xl: 4rem;
+  --mfe-size-6xl: 5rem;
+  --mfe-index-deep: -1;
+  --mfe-index-base: 1;
+  --mfe-index-popover: 100;
+  --mfe-index-tooltip: 200;
+  --mfe-index-sticky: 300;
+  --mfe-index-overlay: 400;
+  --mfe-index-dialog: 500;
+  --mfe-index-notification: 600;
+  --mfe-font-family: "Rubik", sans-serif;
+  --mfe-font-weight-light: 300;
+  --mfe-font-weight-regular: 400;
+  --mfe-font-weight-medium: 500;
+  --mfe-font-weight-semibold: 600;
+  --mfe-font-weight-bold: 700;
+  --mfe-font-size-2xs: 0.5rem;
+  --mfe-font-size-xs: 0.625rem;
+  --mfe-font-size-s: 0.75rem;
+  --mfe-font-size-m: 0.875rem;
+  --mfe-font-size-l: 1rem;
+  --mfe-font-size-xl: 1.25rem;
+  --mfe-font-size-2xl: 1.5rem;
+  --mfe-font-size-3xl: 1.75rem;
+  --mfe-font-size-4xl: 2rem;
+  --mfe-font-size-5xl: 3rem;
+  --mfe-font-size-6xl: 4rem;
+  --mfe-font-display-font-size: 3rem;
+  --mfe-font-display-line-height: calc(3rem + 0.5rem);
+  --mfe-font-display-size: 3rem / calc(3rem + 0.5rem);
+  --mfe-font-display-base: 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-display-light: 300 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-display-regular: 400 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-display-medium: 500 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-display-semibold: 600 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-display-bold: 700 3rem / calc(3rem + 0.5rem) "Rubik", sans-serif;
+  --mfe-font-heading-1-font-size: 2rem;
+  --mfe-font-heading-1-line-height: calc(2rem + 0.25rem);
+  --mfe-font-heading-1-size: 2rem / calc(2rem + 0.25rem);
+  --mfe-font-heading-1-base: 2rem / calc(2rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-1-regular: 400 2rem / calc(2rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-1-medium: 500 2rem / calc(2rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-1-semibold: 600 2rem / calc(2rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-1-bold: 700 2rem / calc(2rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-2-font-size: 1.75rem;
+  --mfe-font-heading-2-line-height: calc(1.75rem + 0.25rem);
+  --mfe-font-heading-2-size: 1.75rem / calc(1.75rem + 0.25rem);
+  --mfe-font-heading-2-base: 1.75rem / calc(1.75rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-2-regular: 400 1.75rem / calc(1.75rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-2-medium: 500 1.75rem / calc(1.75rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-2-semibold: 600 1.75rem / calc(1.75rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-2-bold: 700 1.75rem / calc(1.75rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-3-font-size: 1.5rem;
+  --mfe-font-heading-3-line-height: calc(1.5rem + 0.25rem);
+  --mfe-font-heading-3-size: 1.5rem / calc(1.5rem + 0.25rem);
+  --mfe-font-heading-3-base: 1.5rem / calc(1.5rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-3-regular: 400 1.5rem / calc(1.5rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-3-medium: 500 1.5rem / calc(1.5rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-3-semibold: 600 1.5rem / calc(1.5rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-heading-3-bold: 700 1.5rem / calc(1.5rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-1-font-size: 1.25rem;
+  --mfe-font-title-1-line-height: calc(1.25rem + 0.25rem);
+  --mfe-font-title-1-size: 1.25rem / calc(1.25rem + 0.25rem);
+  --mfe-font-title-1-base: 1.25rem / calc(1.25rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-1-regular: 400 1.25rem / calc(1.25rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-1-medium: 500 1.25rem / calc(1.25rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-1-semibold: 600 1.25rem / calc(1.25rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-1-bold: 700 1.25rem / calc(1.25rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-2-font-size: 1rem;
+  --mfe-font-title-2-line-height: calc(1rem + 0.25rem);
+  --mfe-font-title-2-size: 1rem / calc(1rem + 0.25rem);
+  --mfe-font-title-2-base: 1rem / calc(1rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-2-regular: 400 1rem / calc(1rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-2-medium: 500 1rem / calc(1rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-2-semibold: 600 1rem / calc(1rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-2-bold: 700 1rem / calc(1rem + 0.25rem) "Rubik", sans-serif;
+  --mfe-font-title-3-font-size: 0.875rem;
+  --mfe-font-title-3-line-height: calc(0.875rem + 0.125rem);
+  --mfe-font-title-3-size: 0.875rem / calc(0.875rem + 0.125rem);
+  --mfe-font-title-3-base: 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-3-regular: 400 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-3-medium: 500 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-3-semibold: 600 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-3-bold: 700 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-4-font-size: 0.75rem;
+  --mfe-font-title-4-line-height: calc(0.75rem + 0.125rem);
+  --mfe-font-title-4-size: 0.75rem / calc(0.75rem + 0.125rem);
+  --mfe-font-title-4-base: 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-4-regular: 400 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-4-medium: 500 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-4-semibold: 600 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-title-4-bold: 700 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-1-font-size: 1rem;
+  --mfe-font-body-text-1-line-height: calc(1rem + 0.125rem);
+  --mfe-font-body-text-1-size: 1rem / calc(1rem + 0.125rem);
+  --mfe-font-body-text-1-base: 1rem / calc(1rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-1-regular: 400 1rem / calc(1rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-1-medium: 500 1rem / calc(1rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-2-font-size: 0.875rem;
+  --mfe-font-body-text-2-line-height: calc(0.875rem + 0.125rem);
+  --mfe-font-body-text-2-size: 0.875rem / calc(0.875rem + 0.125rem);
+  --mfe-font-body-text-2-base: 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-2-regular: 400 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-2-medium: 500 0.875rem / calc(0.875rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-3-font-size: 0.75rem;
+  --mfe-font-body-text-3-line-height: calc(0.75rem + 0.125rem);
+  --mfe-font-body-text-3-size: 0.75rem / calc(0.75rem + 0.125rem);
+  --mfe-font-body-text-3-base: 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-3-regular: 400 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-body-text-3-medium: 500 0.75rem / calc(0.75rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-font-caption-font-size: 0.625rem;
+  --mfe-font-caption-line-height: calc(0.625rem + 0.125rem);
+  --mfe-font-caption-size: 0.625rem / calc(0.625rem + 0.125rem);
+  --mfe-font-caption-base: 500 0.625rem / calc(0.625rem + 0.125rem) "Rubik", sans-serif;
+  --mfe-border-radius-xs: 0.125rem;
+  --mfe-border-radius-s: 0.25rem;
+  --mfe-border-radius-m: 0.375rem;
+  --mfe-border-radius-l: 0.5rem;
+  --mfe-border-radius-pill: 62.438rem;
+  --mfe-border-radius-circle: 50%;
+  --mfe-text-x-direction: 1;
+  --mfe-button-display: block;
+}
+ 
+
+:root[dir="rtl"] {
+  /* Direction */
+  direction: rtl;
+
+  --mfe-text-x-direction: -1;
+
+  /* Typography */
+  --mfe-font-family: "Cairo";
+}

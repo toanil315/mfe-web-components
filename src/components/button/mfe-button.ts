@@ -1,0 +1,234 @@
+import { html, LitElement, TemplateResult } from "lit";
+import { customElement, property, state, query } from "lit/decorators.js";
+import { classMap } from "lit/directives/class-map.js";
+import { ifDefined } from "lit/directives/if-defined.js";
+import { submit } from "@open-wc/form-helpers";
+import { event, EventDispatcher } from "../../utils/event";
+import { MfeButtonStyle } from "./mfe-button.style";
+import "../icon/mfe-icon";
+import { MfeIconName } from "../../constants/icon.constant";
+
+export type ButtonVariant = "primary" | "secondary" | "tertiary";
+export type ButtonKind = "default" | "neutral" | "success" | "danger";
+export type ButtonSize = "small" | "medium" | "large";
+export type TargetType = "_blank" | "_parent" | "_self" | "_top";
+
+/**
+ * @tag mfe-button
+ * @summary Baklava Button component
+ *
+ * @cssproperty [--mfe-button-display=inline-block] Sets the display property of button
+ * @cssproperty [--mfe-button-justify=center] Sets the justify-content property of button
+ *
+ */
+@customElement("mfe-button")
+export class MfeButton extends LitElement {
+  static styles = MfeButtonStyle;
+
+  /**
+   * Sets the button variant
+   */
+  @property({ type: String, reflect: true })
+  variant: ButtonVariant = "primary";
+
+  /**
+   * Sets the button kind
+   */
+  @property({ type: String, reflect: true })
+  kind: ButtonKind = "default";
+
+  /**
+   * Sets the button size
+   */
+  @property({ type: String, reflect: true })
+  size: ButtonSize = "medium";
+
+  /**
+   * Sets the button label. Used for accessibility.
+   */
+  @property({ type: String })
+  label!: string;
+
+  /**
+   * Sets the button label for loading status.
+   */
+  @property({ type: String, attribute: "loading-label" })
+  loadingLabel!: string;
+
+  /**
+   * Sets loading state of button
+   */
+  @property({ type: Boolean, reflect: true })
+  loading = false;
+
+  /**
+   * Sets button as disabled
+   */
+  @property({ type: Boolean, reflect: true })
+  disabled = false;
+
+  /**
+   * Set link url. If set, button will be rendered as anchor tag.
+   */
+  @property({ type: String })
+  href?: string;
+
+  /**
+   * Sets the anchor target. Used when `href` is set.
+   */
+  @property({ type: String })
+  target?: TargetType = "_self";
+
+  /**
+   * Sets the type of the button. Set `submit` to use button as the submitter of parent form.
+   */
+  @property({ type: String })
+  type!: "submit";
+
+  /**
+   * Sets button type to dropdown
+   */
+  @property({ type: Boolean })
+  dropdown = false;
+
+  /**
+   * Sets button to get keyboard focus automatically
+   */
+  @property({ type: Boolean, reflect: true })
+  autofocus = false;
+
+  /**
+   * Sets the associated form of the button. Use when `type` is set to `submit` and button is not inside the target form.
+   */
+  @property({ type: String })
+  form!: HTMLFormElement | string;
+
+  @property({ type: String })
+  icon?: MfeIconName;
+
+  /**
+   * Active state
+   */
+  @state({})
+  active = false;
+
+  @query(".button")
+  private button!: HTMLAnchorElement | HTMLButtonElement;
+
+  /**
+   * Fires when button clicked
+   */
+  @event("mfe-click") private onClick!: EventDispatcher<string>;
+
+  private get _isActive() {
+    return this.active;
+  }
+
+  connectedCallback() {
+    super.connectedCallback();
+  }
+
+  private caretTemplate(): TemplateResult {
+    return html` <mfe-icon class="open" name="arrow_up"></mfe-icon>
+      <mfe-icon class="close" name="arrow_down"></mfe-icon>`;
+  }
+
+  private _handleClick() {
+    if (this.type === "submit") {
+      let targetForm: HTMLFormElement;
+
+      if (this.form instanceof HTMLFormElement) {
+        targetForm = this.form;
+      } else if (typeof this.form === "string") {
+        targetForm = document.getElementById(this.form) as HTMLFormElement;
+      } else {
+        targetForm = this.closest("form") as HTMLFormElement;
+      }
+
+      if (targetForm) {
+        submit(targetForm);
+      }
+    }
+
+    this.onClick("Click event fired!");
+  }
+
+  focus() {
+    this.button.focus();
+  }
+
+  get _hasIconSlot() {
+    return this.querySelector(':scope > [slot="icon"]') !== null;
+  }
+
+  get _hasDefaultSlot() {
+    const childNodes = [...this.childNodes];
+
+    return childNodes.some((node) => {
+      const nodeType = node.nodeType;
+
+      // has only text node.
+      if (nodeType === node.TEXT_NODE && node.textContent?.trim() !== "") {
+        return true;
+      }
+      // has element node, it should not have slot attribute.
+      if (nodeType === node.ELEMENT_NODE) {
+        if (!(node as HTMLElement).hasAttribute("slot")) {
+          return true;
+        }
+      }
+      return false;
+    });
+  }
+
+  render(): TemplateResult {
+    const isDisabled = this.loading || this.disabled;
+    const isAnchor = !!this.href;
+
+    const caret = this.dropdown ? this.caretTemplate() : "";
+    const icon = this.icon ? html`<mfe-icon name=${this.icon}></mfe-icon>` : "";
+
+    const label =
+      this.loading && this.loadingLabel
+        ? this.loadingLabel
+        : html`<slot></slot>`;
+
+    const slots = html`<slot name="icon">${icon}</slot
+      ><span class="label">${label}</span> `;
+
+    const classes = classMap({
+      button: true,
+      "has-icon": this.icon || this._hasIconSlot,
+      "has-content": this._hasDefaultSlot,
+      active: !isAnchor && this._isActive,
+    });
+
+    return isAnchor
+      ? html`<a
+          class=${classes}
+          ?autofocus=${this.autofocus}
+          aria-disabled="${ifDefined(isDisabled)}"
+          aria-label="${ifDefined(this.label)}"
+          href=${ifDefined(this.href)}
+          target=${ifDefined(this.target)}
+          role="button"
+          >${slots}
+        </a>`
+      : html`<button
+          class=${classes}
+          ?autofocus=${this.autofocus}
+          aria-disabled="${ifDefined(isDisabled)}"
+          aria-label="${ifDefined(this.label)}"
+          ?disabled=${isDisabled}
+          @click="${this._handleClick}"
+        >
+          ${slots} ${caret}
+        </button>`;
+  }
+}
+
+declare global {
+  interface HTMLElementTagNameMap {
+    "mfe-button": MfeButton;
+  }
+}

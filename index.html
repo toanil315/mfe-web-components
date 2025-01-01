@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Lit + TS</title>
+  <link rel="stylesheet" href="/src/style-dictionary/variables.css" />
+  <script type="module" src="/src/components/button/mfe-button.ts"></script>
+  <script type="module" src="/src/components/accordion/accordion-item/mfe-accordion-item.ts"></script>
+  <script type="module" src="/src/components/accordion/accordion-group/mfe-accordion-group.ts"></script>
+  <script type="module" src="/src/components/alert/mfe-alert.ts"></script>
+  <script type="module" src="/src/components/icon/mfe-icon.ts"></script>
+  <script type="module" src="/src/components/badge/mfe-badge.ts"></script>
+  <script type="module" src="/src/components/switch/mfe-switch.ts"></script>
+  <script type="module" src="/src/components/calendar/mfe-calendar.ts"></script>
+  <script type="module" src="/src/components/dialog/mfe-dialog.ts"></script>
+  <script type="module" src="/src/components/drawer/mfe-drawer.ts"></script>
+  <script type="module" src="/src/components/input/mfe-input.ts"></script>
+  <script type="module" src="/src/components/popover/mfe-popover.ts"></script>
+  <script type="module" src="/src/components/textarea/mfe-textarea.ts"></script>
+  <script type="module" src="/src/components/dropdown/mfe-dropdown.ts"></script>
+  <script type="module" src="/src/components/notification/mfe-notification.ts"></script>
+  <script type="module" src="/src/components/tooltip/mfe-tooltip.ts"></script>
+  <script type="module" src="/src/components/spinner/mfe-spinner.ts"></script>
+  <script type="module" src="/src/components/split-button/mfe-split-button.ts"></script>
+  <script type="module" src="/src/components/radio-group/mfe-radio-group.ts"></script>
+  <script type="module" src="/src/components/checkbox-group/mfe-checkbox-group.ts"></script>
+  <script type="module" src="/src/components/tab-group/mfe-tab-group.ts"></script>
+  <script type="module" src="/src/components/select/mfe-select.ts"></script>
+  <script type="module" src="/src/components/table/mfe-table.ts"></script>
+  <script type="module" src="/src/components/table/table-header/mfe-table-header.ts"></script>
+  <script type="module" src="/src/components/table/table-body/mfe-table-body.ts"></script>
+  <script type="module" src="/src/components/table/table-row/mfe-table-row.ts"></script>
+  <script type="module" src="/src/components/table/table-cell/mfe-table-cell.ts"></script>
+  <script type="module" src="/src/components/table/table-header-cell/mfe-table-header-cell.ts"></script>
+
+  <style>
+    mfe-dialog.limited-width .content {
+      max-width: 500px;
+      max-height: 500px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <mfe-config-provider>
+    <mfe-button id="dialog" variant="secondary">Open Dialog</mfe-button>
+    <mfe-button id="drawer" variant="primary">Open Drawer</mfe-button><br><br>
+    <mfe-input label="User Name" placeholder="Enter Your Name" error="This field is required"></mfe-input>
+    <mfe-button id="popover" variant="secondary">Open Popover</mfe-button>
+    <mfe-popover target="popover">
+      Popover Content
+    </mfe-popover>
+
+    <mfe-textarea value="1
+  2
+  3
+  4
+  5" rows="2" expand="true"></mfe-textarea>
+    <br /> <br />
+    <mfe-dropdown label="Dropdown Button">
+      <mfe-dropdown-group caption="Caption">
+        <mfe-dropdown-item>Action 1</mfe-dropdown-item>
+        <mfe-dropdown-item>Action 2</mfe-dropdown-item>
+      </mfe-dropdown-group>
+      <mfe-dropdown-item>Action 3</mfe-dropdown-item>
+      <mfe-dropdown-item icon="info">Action 4</mfe-dropdown-item>
+      <mfe-dropdown-item>Action 5</mfe-dropdown-item>
+      <mfe-dropdown-group caption="Caption">
+        <mfe-dropdown-item icon="heart">Action 6</mfe-dropdown-item>
+        <mfe-dropdown-item>Action 7</mfe-dropdown-item>
+      </mfe-dropdown-group>
+    </mfe-dropdown>
+    <br /> <br />
+    <mfe-notification duration="60"></mfe-notification>
+
+    <mfe-button id="add-notification">Add Notification</mfe-button>
+
+    <br /> <br />
+    <mfe-tooltip>
+      <mfe-button slot="tooltip-trigger" icon="plus_fill"></mfe-button>
+      You can add text, photos and graphics. If you put a very long text, it will be wrapped after max-length of the
+      tooltip.
+    </mfe-tooltip>
+
+    <br /> <br />
+    <mfe-spinner></mfe-spinner>
+
+    <br /> <br />
+    <mfe-split-button label="Split Button">
+      <mfe-dropdown-group caption="Caption">
+        <mfe-dropdown-item>Action 1</mfe-dropdown-item>
+        <mfe-dropdown-item>Action 2</mfe-dropdown-item>
+      </mfe-dropdown-group>
+      <mfe-dropdown-item>Action 3</mfe-dropdown-item>
+      <mfe-dropdown-item icon="info">Action 4</mfe-dropdown-item>
+      <mfe-dropdown-item>Action 5</mfe-dropdown-item>
+      <mfe-dropdown-group caption="Caption">
+        <mfe-dropdown-item icon="heart">Action 6</mfe-dropdown-item>
+        <mfe-dropdown-item>Action 7</mfe-dropdown-item>
+      </mfe-dropdown-group>
+    </mfe-split-button>
+
+    <br /> <br />
+    <mfe-radio-group label="Payment Type" name="paymentType">
+      <mfe-radio value="cc">Credit Card</mfe-radio>
+      <mfe-radio value="ideal">iDeal</mfe-radio>
+    </mfe-radio-group>
+
+    <br /> <br />
+    <mfe-checkbox-group label="Favorite animals" name="favoriteAnimals" value="[&quot;bird&quot;]">
+      <mfe-checkbox value="cat">Cat</mfe-checkbox>
+      <mfe-checkbox value="dog">Dog</mfe-checkbox>
+      <mfe-checkbox value="bird">Bird</mfe-checkbox>
+    </mfe-checkbox-group>
+
+    <br /> <br />
+
+
+
+    <mfe-dialog id="dl-sticky-footer" class="limited-width" caption="Terms And Conditions">
+      <div class="content">
+        <mfe-alert icon>Please read all terms and conditions.</mfe-alert>
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+        </ul>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+          Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
+          original form
+          accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        <h4>Quis autem vel eum iure reprehenderit qui</h4>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry
+          Lorem Ipsum has been the industry's standard dummy text ever since the 1500s when an unknown printer took a
+          galley of type and scramble
+          it to make a type specimen book.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+          <li>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit</li>
+          <li>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore.</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun ut labore et dolore
+          magna aliqua.
+          Ut enim ad minim veniam, quis nostrud exercitatioullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+
+      <mfe-button slot="primary-action" variant="primary" size="large">Agree</mfe-button>
+      <mfe-button slot="secondary-action" variant="secondary" size="large">Disagree</mfe-button>
+
+    </mfe-dialog>
+
+
+    <mfe-drawer id="drawer-1">
+      <div style="font: var(--mfe-font-body-text-2)">
+
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+          a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+          containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+          versions
+          of Lorem Ipsum.
+        </p>
+
+      </div>
+    </mfe-drawer>
+
+    <br /> <br />
+    <mfe-tab-group>
+      <mfe-tab name="test-1" slot="tabs">Tab 1</mfe-tab>
+      <mfe-tab name="test-2" slot="tabs">Tab 2</mfe-tab>
+      <mfe-tab name="test-3" slot="tabs">Tab 3</mfe-tab>
+      <mfe-tab-panel tab="test-1">This is general Tab Panel</mfe-tab-panel>
+      <mfe-tab-panel tab="test-2">Panel 2</mfe-tab-panel>
+      <mfe-tab-panel tab="test-3">Panel 3</mfe-tab-panel>
+    </mfe-tab-group>
+
+    <br /> <br />
+    <mfe-select multiple search-bar search-bar-placeholder="Search your options">
+      <mfe-select-option value="tr">Turkiye</mfe-select-option>
+      <mfe-select-option value="nl">The Netherlands</mfe-select-option>
+      <mfe-select-option value="de">Germany</mfe-select-option>
+      <mfe-select-option value="uk">United Kingdom</mfe-select-option>
+    </mfe-select>
+
+    <br /> <br />
+
+    <div style="height: 400px;">
+      <mfe-table selected="[&quot;row-1&quot;,&quot;row-4&quot;]" selectable multiple sortable sticky-first-column
+        sticky-last-column sort-key sort-direction>
+        <mfe-table-header sticky>
+          <mfe-table-row>
+
+            <mfe-table-header-cell sort-key="id"
+              style=" --mfe-table-header-cell-min-width: 100px; --mfe-table-header-cell-width: 100px;">
+              ID
+
+            </mfe-table-header-cell>
+            <mfe-table-header-cell sort-key="first_name" style=" --mfe-table-header-cell-min-width: 100px;">
+              First Name
+
+            </mfe-table-header-cell>
+            <mfe-table-header-cell sort-key="last_name"
+              style="--mfe-table-header-cell-width: 150px; --mfe-table-header-cell-min-width: 100px;">
+              Last Name
+
+            </mfe-table-header-cell>
+            <mfe-table-header-cell
+              style="--mfe-table-header-cell-width: 250px; --mfe-table-header-cell-min-width: 250px;">
+              Email
+
+            </mfe-table-header-cell>
+            <mfe-table-header-cell style="--mfe-table-header-cell-width: 85px; ">
+              Gender
+
+            </mfe-table-header-cell>
+            <mfe-table-header-cell style="--mfe-table-header-cell-width: 90px; ">
+              IP Address
+              <div style="margin-left: 12px;">
+                <mfe-tooltip>
+                  <mfe-icon slot="tooltip-trigger" name="info"></mfe-icon>
+                  Ip address of end user
+                </mfe-tooltip>
+              </div>
+            </mfe-table-header-cell>
+          </mfe-table-row>
+        </mfe-table-header>
+        <mfe-table-body><mfe-table-row selection-key="row-1">
+            <mfe-table-cell> 1</mfe-table-cell><mfe-table-cell> Antonella</mfe-table-cell><mfe-table-cell>
+              Bellefonte</mfe-table-cell><mfe-table-cell> abellefonte0@nba.com</mfe-table-cell><mfe-table-cell>
+              Female</mfe-table-cell><mfe-table-cell> 193.108.174.118</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-2">
+            <mfe-table-cell> 2</mfe-table-cell><mfe-table-cell> Wash</mfe-table-cell><mfe-table-cell>
+              Carnson</mfe-table-cell><mfe-table-cell> wcarnson1@jalbum.net</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 255.169.128.60</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-3">
+            <mfe-table-cell> 3</mfe-table-cell><mfe-table-cell> Betteanne</mfe-table-cell><mfe-table-cell>
+              Cowgill</mfe-table-cell><mfe-table-cell> bcowgill2@timesonline.co.uk</mfe-table-cell><mfe-table-cell>
+              Female</mfe-table-cell><mfe-table-cell> 235.237.3.233</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-4">
+            <mfe-table-cell> 4</mfe-table-cell><mfe-table-cell> Lilith</mfe-table-cell><mfe-table-cell>
+              Astbury</mfe-table-cell><mfe-table-cell> lastbury3@shinystat.com</mfe-table-cell><mfe-table-cell>
+              Female</mfe-table-cell><mfe-table-cell> 46.41.60.65</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-5">
+            <mfe-table-cell> 5</mfe-table-cell><mfe-table-cell> Nikos</mfe-table-cell><mfe-table-cell>
+              Vasenkov</mfe-table-cell><mfe-table-cell> nvasenkov4@slate.com</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 13.95.130.24</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-6">
+            <mfe-table-cell> 6</mfe-table-cell><mfe-table-cell> Drucill</mfe-table-cell><mfe-table-cell>
+              Runciman</mfe-table-cell><mfe-table-cell> drunciman5@hc360.com</mfe-table-cell><mfe-table-cell>
+              Female</mfe-table-cell><mfe-table-cell> 185.192.50.41</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-7">
+            <mfe-table-cell> 7</mfe-table-cell><mfe-table-cell> Gaspar</mfe-table-cell><mfe-table-cell>
+              Falls</mfe-table-cell><mfe-table-cell> gfalls6@howstuffworks.com</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 107.51.243.94</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-8">
+            <mfe-table-cell> 8</mfe-table-cell><mfe-table-cell> Hilary</mfe-table-cell><mfe-table-cell>
+              Izzatt</mfe-table-cell><mfe-table-cell> hizzatt7@java.com</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 136.171.100.29</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-9">
+            <mfe-table-cell> 9</mfe-table-cell><mfe-table-cell> Alonzo</mfe-table-cell><mfe-table-cell>
+              Beardwood</mfe-table-cell><mfe-table-cell> abeardwood8@loc.gov</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 110.116.212.242</mfe-table-cell>
+          </mfe-table-row><mfe-table-row selection-key="row-10">
+            <mfe-table-cell> 10</mfe-table-cell><mfe-table-cell> Jacky</mfe-table-cell><mfe-table-cell>
+              Clyant</mfe-table-cell><mfe-table-cell> jclyant9@earthlink.net</mfe-table-cell><mfe-table-cell>
+              Male</mfe-table-cell><mfe-table-cell> 55.126.158.104</mfe-table-cell>
+          </mfe-table-row></mfe-table-body>
+      </mfe-table>
+    </div>
+
+    <br /> <br />
+  </mfe-config-provider>
+
+  <script>
+    const dialogButton = document.querySelector('mfe-button#dialog');
+    const dialog = document.querySelector('mfe-dialog');
+    dialogButton.addEventListener('mfe-click', (e) => {
+      e.stopPropagation();
+      dialog.setAttribute('open', 'true');
+    });
+
+    const drawerButton = document.querySelector('mfe-button#drawer');
+    const drawer = document.querySelector('mfe-drawer');
+    drawerButton.addEventListener('mfe-click', (e) => {
+      e.stopPropagation();
+      drawer.setAttribute('open', 'true');
+    });
+
+    const popoverButton = document.querySelector('mfe-button#popover');
+    const popover = document.querySelector('mfe-popover');
+    popoverButton.addEventListener('mfe-click', (e) => {
+      e.stopPropagation();
+      popover.show()
+    });
+
+    const notificationElement = document.querySelector("mfe-notification");
+    const addButton = document.querySelector("mfe-button#add-notification");
+
+    addButton.addEventListener("mfe-click", () => {
+      notificationElement.addNotification({
+        "noAnimation": false,
+        "duration": 60,
+        "caption": `Notification Caption ${Date.now()}`,
+        "description": `Notification Description ${Date.now()}${Date.now()}${Date.now()}`,
+        "icon": "true",
+        "variant": "info",
+        "permanent": false,
+        primaryAction: {
+          label: "Primary Action",
+          onClick: () => {
+            window.alert("Primary Action Clicked");
+          },
+        },
+      });
+    });
+  </script>
+</body>
+
+</html>
