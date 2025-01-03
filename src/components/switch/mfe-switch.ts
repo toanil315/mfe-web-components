@@ -1,6 +1,5 @@
 import { html, LitElement, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
-import { ifDefined } from "lit/directives/if-defined.js";
 import { MfeSwitchStyle } from "./mfe-switch.style";
 import { event, EventDispatcher } from "../../utils/event";
 

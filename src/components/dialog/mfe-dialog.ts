@@ -5,11 +5,6 @@ import "../button/mfe-button";
 import { MfeDialogStyle } from "./mfe-dialog.style";
 import { event, EventDispatcher } from "../../utils/event";
 
-type DialogElement = {
-  showModal: () => void;
-  close: () => void;
-};
-
 /**
  * @tag mfe-dialog
  * @summary Baklava Dialog component

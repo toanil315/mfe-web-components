@@ -1,11 +1,11 @@
 {
-  "name": "lit-learn",
+  "name": "mfe-components",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && cp src/style-dictionary/variables.css dist/variables.css",
     "preview": "vite preview",
     "build-tokens": "node ./src/style-dictionary/build-tokens.mjs"
   },
@@ -22,5 +22,10 @@
     "@types/node": "^22.10.3",
     "typescript": "~5.6.2",
     "vite": "^6.0.1"
-  }
+  },
+  "main": "dist/mfe-components.cjs",
+  "module": "dist/mfe-components.js",
+  "files": [
+    "dist/"
+  ]
 }
