@@ -233,18 +233,10 @@ export const ICON_NAMES = {
   zoom_out: "zoom_out",
 };
 
-const importScriptDynamically = ({ path }: { path: string }) => {
-  return import(path).catch((err) => {
-    // Handle any errors as needed
-    throw err;
-  });
-};
-
 export const ICON_RESOLVERS = Object.keys(ICON_NAMES).reduce<
   Record<string, Function>
 >((resolver, iconName) => {
-  resolver[iconName] = () =>
-    importScriptDynamically({ path: `../icons/${iconName}.svg.js` });
+  resolver[iconName] = () => import(`./icons/${iconName}.svg`);
   return resolver;
 }, {});
 

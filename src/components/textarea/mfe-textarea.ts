@@ -7,7 +7,8 @@ import { styleMap } from "lit/directives/style-map.js";
 import { FormControlMixin } from "@open-wc/form-control";
 import "element-internals-polyfill";
 import { MfeTextareaStyle } from "./mfe-textarea.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 export type TextareaSize = "small" | "medium" | "large";
 /**
@@ -230,8 +231,8 @@ export default class MfeTextarea extends FormControlMixin(LitElement) {
       this.characterCounter && this.maxlength
         ? `${this.value.length}/${this.maxlength}`
         : this.characterCounter
-          ? `${this.value.length}`
-          : "";
+        ? `${this.value.length}`
+        : "";
 
     const characterCounter = this.characterCounter
       ? html`<p class="counter-text">${characterCounterText}</p>`

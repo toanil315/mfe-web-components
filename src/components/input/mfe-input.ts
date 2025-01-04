@@ -8,9 +8,10 @@ import { submit } from "@open-wc/form-helpers";
 import "element-internals-polyfill";
 import "../button/mfe-button";
 import "../icon/mfe-icon";
-import { MfeIconName } from "../../constants/icon.constant";
+import type { MfeIconName } from "../../constants/icon.constant";
 import { MfeInputStyle } from "./mfe-input.style";
-import { EventDispatcher, event } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 export type InputType =
   | "text"

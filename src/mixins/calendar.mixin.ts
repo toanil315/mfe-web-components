@@ -1,7 +1,7 @@
 import { LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
 import { CALENDAR_TYPES } from "../components/calendar/mfe-calendar.constant";
-import { DayValues } from "../components/calendar/mfe-calendar.type";
+import type { DayValues } from "../components/calendar/mfe-calendar.type";
 import { stringToDateArrayConverter } from "../utils/string-to-date.util";
 
 export default class DatepickerCalendarMixin extends LitElement {

@@ -14,7 +14,8 @@ import "element-internals-polyfill";
 import { mfeSelectTag } from "./mfe-select.constant";
 import { MfeSelectStyle } from "./mfe-select.style";
 import { stringBooleanConverter } from "../../utils/string-to-boolean.util";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import MfeSelectOption from "../select/option/mfe-option";
 
 import "../select/option/mfe-option";
@@ -609,7 +610,7 @@ export default class MfeSelect extends FormControlMixin(LitElement) {
           value: option.value,
           selected: option.selected,
           text: option.textContent,
-        }) as ISelectOption<string>
+        } as ISelectOption<string>)
     );
 
     if (!this.multiple) this._onMfeSelect(options[0]);

@@ -3,8 +3,9 @@ import { customElement, property } from "lit/decorators.js";
 import { MfeAlertStyle } from "./mfe-alert.style";
 import { ButtonKind, ButtonSize, ButtonVariant } from "../button/mfe-button";
 import { stringBooleanConverter } from "../../utils/string-to-boolean.util";
-import { EventDispatcher, event } from "../../utils/event";
-import { MfeIconName } from "../../constants/icon.constant";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
+import type { MfeIconName } from "../../constants/icon.constant";
 import { ifDefined } from "lit/directives/if-defined.js";
 import "../icon/mfe-icon";
 

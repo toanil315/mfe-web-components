@@ -1,22 +1,23 @@
 import { html, LitElement, TemplateResult } from "lit";
 import { customElement, property, state, query } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { ReferenceElement } from "@floating-ui/core";
+import type { ReferenceElement } from "@floating-ui/core";
 import { MfeSplitButtonStyle } from "./mfe-split-button.style";
 import MfePopover from "../popover/mfe-popover";
 
 import "../popover/mfe-popover";
 import "../button/mfe-button";
 
-import {
+import type {
   ButtonKind,
   ButtonSize,
   ButtonVariant,
-  MfeButton,
   TargetType,
 } from "../button/mfe-button";
-import { MfeIconName } from "../../constants/icon.constant";
-import { event, EventDispatcher } from "../../utils/event";
+import { MfeButton } from "../button/mfe-button";
+import type { MfeIconName } from "../../constants/icon.constant";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import MfeDropdownItem from "../dropdown/item/mfe-dropdown-item";
 import { mfeDropdownItemTag } from "../dropdown/mfe-dropdown-tags";
 

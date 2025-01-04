@@ -2,11 +2,8 @@ import { html, LitElement, TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { unsafeSVG } from "lit/directives/unsafe-svg.js";
 import { MfeIconStyle } from "./mfe-icon.style";
-import {
-  ICON_NAMES,
-  ICON_RESOLVERS,
-  MfeIconName,
-} from "../../constants/icon.constant";
+import { ICON_NAMES, ICON_RESOLVERS } from "../../constants/icon.constant";
+import type { MfeIconName } from "../../constants/icon.constant";
 import { decodeSvgDataUri } from "../../utils/data-uri-to-svg.util";
 
 @customElement("mfe-icon")

@@ -1,7 +1,7 @@
 import { LitElement, TemplateResult, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { MfeBadgeStyle } from "./mfe-badge.style";
-import { MfeIconName } from "../../constants/icon.constant";
+import type { MfeIconName } from "../../constants/icon.constant";
 import "../icon/mfe-icon";
 
 @customElement("mfe-badge")

@@ -3,7 +3,8 @@ import { customElement, property, query } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import "../button/mfe-button";
 import { MfeDialogStyle } from "./mfe-dialog.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 /**
  * @tag mfe-dialog

@@ -1,7 +1,8 @@
 import { html, LitElement, TemplateResult } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { MfeSwitchStyle } from "./mfe-switch.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 export const mfeSwitchTag = "mfe-switch";
 

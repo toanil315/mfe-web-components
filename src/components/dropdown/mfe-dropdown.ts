@@ -2,13 +2,14 @@ import { LitElement, html, TemplateResult } from "lit";
 import { customElement, property, state, query } from "lit/decorators.js";
 import { MfeDropdownStyle } from "./mfe-dropdown.style";
 import MfePopover from "../popover/mfe-popover";
-import {
+import type {
   ButtonKind,
   ButtonSize,
   ButtonVariant,
-  MfeButton,
 } from "../button/mfe-button";
-import { EventDispatcher, event } from "../../utils/event";
+import { MfeButton } from "../button/mfe-button";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import MfeDropdownItem from "./item/mfe-dropdown-item";
 import { mfeDropdownItemTag, mfeDropdownTag } from "./mfe-dropdown-tags";
 

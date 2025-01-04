@@ -14,7 +14,8 @@ import {
   MiddlewareState,
 } from "@floating-ui/dom";
 import { MfePopoverStyle } from "./mfe-popover.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import { getTarget } from "../../utils/element";
 
 export type Placement =

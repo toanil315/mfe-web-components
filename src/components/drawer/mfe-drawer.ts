@@ -2,7 +2,8 @@ import { html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import "../button/mfe-button";
 import { MfeDrawerStyle } from "./mfe-drawer.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import { styleToPixelConverter } from "../../utils/style-to-px.util";
 
 /**

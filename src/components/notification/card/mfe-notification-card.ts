@@ -4,8 +4,9 @@ import { ifDefined } from "lit/directives/if-defined.js";
 import { AlertVariant, MfeAlert } from "../../alert/mfe-alert";
 import { MfeNotificationCardStyle } from "./mfe-notification-card.style";
 import { stringBooleanConverter } from "../../../utils/string-to-boolean.util";
-import { MfeIconName } from "../../../constants/icon.constant";
-import { event, EventDispatcher } from "../../../utils/event";
+import type { MfeIconName } from "../../../constants/icon.constant";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 import "../../alert/mfe-alert";
 
 export enum CloseSource {

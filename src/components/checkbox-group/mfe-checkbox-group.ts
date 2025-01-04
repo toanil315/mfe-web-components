@@ -10,7 +10,8 @@ import {
 } from "./mfe-checkbox-group.constant";
 import { MfeCheckboxGroupStyle } from "./mfe-checkbox-group.style";
 import MfeCheckbox from "./checkbox/mfe-checkbox";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 import "./checkbox/mfe-checkbox";
 

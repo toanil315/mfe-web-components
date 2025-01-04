@@ -11,8 +11,9 @@ import {
   mfeTableTag,
 } from "./mfe-table.constant";
 import { MfeTableStyle } from "./mfe-table.style";
-import { event, EventDispatcher } from "../../utils/event";
-import { IMfeTableRow, SortDirection } from "./mfe-table.facade";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
+import type { IMfeTableRow, SortDirection } from "./mfe-table.facade";
 
 /**
  * @tag mfe-table

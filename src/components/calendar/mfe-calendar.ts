@@ -3,14 +3,15 @@ import { customElement, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import "../button/mfe-button";
 import DatepickerCalendarMixin from "../../mixins/calendar.mixin";
-import { Calendar, CalendarDay, CalendarView } from "./mfe-calendar.type";
+import type { Calendar, CalendarDay, CalendarView } from "./mfe-calendar.type";
 import {
   CALENDAR_TYPES,
   CALENDAR_VIEWS,
   FIRST_MONTH_INDEX,
   LAST_MONTH_INDEX,
 } from "./mfe-calendar.constant";
-import { EventDispatcher, event } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import { MfeCalendarStyle } from "./mfe-calendar.style";
 
 export const mfeCalendarChangedEvent = "mfe-calendar-change";

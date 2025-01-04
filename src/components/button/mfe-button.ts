@@ -1,12 +1,13 @@
 import { html, LitElement, TemplateResult } from "lit";
-import { customElement, property, state, query } from "lit/decorators.js";
+import { property, state, query, customElement } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { submit } from "@open-wc/form-helpers";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import { MfeButtonStyle } from "./mfe-button.style";
 import "../icon/mfe-icon";
-import { MfeIconName } from "../../constants/icon.constant";
+import type { MfeIconName } from "../../constants/icon.constant";
 
 export type ButtonVariant = "primary" | "secondary" | "tertiary";
 export type ButtonKind = "default" | "neutral" | "success" | "danger";

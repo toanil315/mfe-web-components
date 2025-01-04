@@ -1,12 +1,14 @@
 import { html, LitElement, PropertyValues, TemplateResult } from "lit";
 import { customElement, property, query } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
-import { ReferenceElement } from "@floating-ui/core";
-import MfePopover, { Placement } from "../popover/mfe-popover";
+import type { ReferenceElement } from "@floating-ui/core";
+import MfePopover from "../popover/mfe-popover";
+import type { Placement } from "../popover/mfe-popover";
 
 import "../popover/mfe-popover";
 import { MfeTooltipStyle } from "./mfe-tooltip.style";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 import { getTarget } from "../../utils/element";
 
 /**

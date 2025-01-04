@@ -7,7 +7,8 @@ import { MfeRadioGroupStyle } from "./mfe-radio-group.style";
 import MfeRadio from "./radio/mfe-radio";
 
 import "./radio/mfe-radio";
-import { event, EventDispatcher } from "../../utils/event";
+import { event } from "../../utils/event";
+import type { EventDispatcher } from "../../utils/event";
 
 export const mfeChangeEventName = "mfe-radio-change";
 

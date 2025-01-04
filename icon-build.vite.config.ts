@@ -5,10 +5,10 @@ export default defineConfig({
   build: {
     rollupOptions: {
       preserveEntrySignatures: "strict",
-      input: ["src/index.ts"],
+      input: ["icon-src/index.ts"],
       output: [
         {
-          dir: "dist",
+          dir: "build",
           format: "esm",
           preserveModules: true,
           preserveModulesRoot: "src",

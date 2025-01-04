@@ -2,7 +2,8 @@ import { html, LitElement } from "lit";
 import { customElement, property, query, state } from "lit/decorators.js";
 import { mfeSelectOptionTag, mfeSelectTag } from "../mfe-select.constant";
 import { MfeSelectOptionStyle } from "./mfe-option.style";
-import { event, EventDispatcher } from "../../../utils/event";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 
 import "../../checkbox-group/checkbox/mfe-checkbox";
 import MfeSelect from "../mfe-select";

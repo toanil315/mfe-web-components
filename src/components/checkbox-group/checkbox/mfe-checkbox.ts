@@ -11,7 +11,8 @@ import {
   mfeCheckboxTag,
 } from "../mfe-checkbox-group.constant";
 import { MfeCheckboxStyle } from "./mfe-checkbox.style";
-import { event, EventDispatcher } from "../../../utils/event";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 
 import "../../icon/mfe-icon";
 import MfeCheckboxGroup from "../mfe-checkbox-group";

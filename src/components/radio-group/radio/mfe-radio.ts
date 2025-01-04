@@ -3,7 +3,8 @@ import { customElement, property, query, state } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { MfeRadioStyle } from "./mfe-radio.style";
 import { mfeRadioGroupTag, mfeRadioTag } from "../mfe-radio-group-tags";
-import { event, EventDispatcher } from "../../../utils/event";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 import MfeRadioGroup from "../mfe-radio-group";
 
 export const mfeCheckedEventName = "mfe-checked";

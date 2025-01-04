@@ -3,7 +3,8 @@ import { customElement, property, query } from "lit/decorators.js";
 import { classMap } from "lit/directives/class-map.js";
 import { MfeAccordionItemStyle } from "./mfe-accordion-item.style";
 import { stringBooleanConverter } from "../../../utils/string-to-boolean.util";
-import { event, EventDispatcher } from "../../../utils/event";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 
 import "../../icon/mfe-icon";
 

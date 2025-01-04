@@ -3,8 +3,9 @@ import { customElement, property, query } from "lit/decorators.js";
 
 import { mfeTabGroupTag, mfeTabTag } from "../mfe-tab-group.constant";
 import { MfeTabStyle } from "./mfe-tab.style";
-import { MfeIconName } from "../../../constants/icon.constant";
-import { event, EventDispatcher } from "../../../utils/event";
+import type { MfeIconName } from "../../../constants/icon.constant";
+import { event } from "../../../utils/event";
+import type { EventDispatcher } from "../../../utils/event";
 
 import "../../icon/mfe-icon";
 import "../../badge/mfe-badge";

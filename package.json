@@ -1,11 +1,11 @@
 {
-  "name": "mfe-components",
-  "private": true,
-  "version": "0.0.0",
+  "name": "toanil315-mfe-components",
+  "version": "0.0.15",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp src/style-dictionary/variables.css dist/variables.css",
+    "icon-build": "vite build --config icon-build.vite.config.ts",
+    "build": "yarn icon-build  && vite build && cp -r build/icons dist/icons && rm -rf build && cp src/style-dictionary/variables.css dist/variables.css",
     "preview": "vite preview",
     "build-tokens": "node ./src/style-dictionary/build-tokens.mjs"
   },
@@ -20,11 +20,13 @@
   },
   "devDependencies": {
     "@types/node": "^22.10.3",
+    "svg-inline-loader": "^0.8.2",
     "typescript": "~5.6.2",
-    "vite": "^6.0.1"
+    "vite": "^6.0.1",
+    "vite-plugin-dts": "^4.4.0"
   },
-  "main": "dist/mfe-components.cjs",
-  "module": "dist/mfe-components.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/"
   ]

@@ -7,7 +7,7 @@ import {
   mfeTableTag,
 } from "../mfe-table.constant";
 import { MfeTableHeaderCellStyle } from "./mfe-table-header-cell.style";
-import { MfeIconName } from "../../../constants/icon.constant";
+import type { MfeIconName } from "../../../constants/icon.constant";
 import MfeCheckbox from "../../checkbox-group/checkbox/mfe-checkbox";
 
 import "../../icon/mfe-icon";
@@ -151,8 +151,8 @@ export default class MfeTableHeaderCell extends LitElement {
     const className = this.shadowRight
       ? "shadow-right"
       : this.shadowLeft
-        ? "shadow-left"
-        : "";
+      ? "shadow-left"
+      : "";
 
     const template = this.sortable
       ? html` <button

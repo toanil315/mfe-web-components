@@ -2,7 +2,7 @@ import { html, LitElement, TemplateResult } from "lit";
 import { customElement, property, state } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";
 import { repeat } from "lit/directives/repeat.js";
-import { MfeIconName } from "../../constants/icon.constant";
+import type { MfeIconName } from "../../constants/icon.constant";
 import { CloseSource, NotificationVariant } from "./card/mfe-notification-card";
 import { MfeNotificationStyle } from "./mfe-notification.style";
 import { MfeAlert } from "../alert/mfe-alert";
